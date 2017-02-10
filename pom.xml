@@ -8,5 +8,13 @@
     <artifactId>testNG</artifactId>
     <version>0.0.1</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.9.13.6</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
 </project>

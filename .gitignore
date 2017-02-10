@@ -1,0 +1,14 @@
+/target/
+/.idea/
+/*.iml
+/zkm/
+/log4j*
+/locket_cache
+*.DS_Store
+lss-gateway-*
+ChangeLog.txt
+ZKM_log.txt
+ZKM_TrimLog.txt
+.classpath
+.project
+.settings/
