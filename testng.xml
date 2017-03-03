@@ -98,5 +98,15 @@
         </classes>
     </test>
 
+
+    <test name="dependency">
+        <classes>
+            <class name="com.bmwu.testng.dependency.DependsOnGroupsAppTest"/>
+            <class name="com.bmwu.testng.dependency.DependsOnGroupsDBTest"/>
+            <class name="com.bmwu.testng.dependency.DependsOnGroupsServerTest"/>
+        </classes>
+    </test>
+
+
 </suite>
 <!-- @AfterSuite -->
