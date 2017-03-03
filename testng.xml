@@ -22,6 +22,8 @@
     </test>
     <!-- @AfterTest -->
 
+    <!-- Group Test -->
+
     <test name="GroupTest">
         <classes>
             <class name="com.bmwu.testng.groups.GroupOnClassTest" />
@@ -44,6 +46,57 @@
         </classes>
     </test>
 
+    <!-- Suite Test -->
+    <test name="order">
+        <classes>
+            <class name="com.bmwu.testng.suite.ConfigTest" />
+            <class name="com.bmwu.testng.suite.OrderTest"/>
+        </classes>
+    </test>
+
+    <test name="database">
+        <classes>
+            <class name="com.bmwu.testng.suite.ConfigTest"/>
+            <class name="com.bmwu.testng.suite.DatabaseTest"/>
+        </classes>
+    </test>
+
+    <!--Specify package names instead of class names-->
+    <test name="order2" >
+        <packages>
+            <package name="com.bmwu.testng.suite.*"/>
+        </packages>
+    </test>
+
+    <!--Specify methods to include or exclude-->
+    <test name="order3">
+        <classes>
+            <class name="com.bmwu.testng.suite.ConfigTest" />
+            <class name="com.bmwu.testng.suite.OrderTest">
+                <methods>
+                    <include name="testMakeOrder" />
+                    <include name="testUpdateOrder" />
+                    <!--
+                        <exclude name="testMakeOrder" />
+                     -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--Specify groups to include or exclude-->
+    <test name="database2">
+        <groups>
+            <run>
+                <exclude name="brokenTests" />
+                <include name="db" />
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.bmwu.testng.suite.DatabaseTest"/>
+        </classes>
+    </test>
 
 </suite>
 <!-- @AfterSuite -->
