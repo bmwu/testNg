@@ -6,9 +6,9 @@
     <!-- @BeforeTest -->
     <test name="case1">
         <classes>
-            <class name="com.bmwu.testng.configurationannotations.ConfigurationTest" />
-            <class name="com.bmwu.testng.configurationannotations.SuiteTest" />
-            <class name="com.bmwu.testng.configurationannotations.OtherTest" />
+            <class name="com.bmwu.configurationannotations.ConfigurationTest" />
+            <class name="com.bmwu.configurationannotations.SuiteTest" />
+            <class name="com.bmwu.configurationannotations.OtherTest" />
         </classes>
     </test>
     <!-- @AfterTest -->
@@ -16,8 +16,8 @@
     <!-- @BeforeTest -->
     <test name="case2">
         <classes>
-            <class name="com.bmwu.testng.configurationannotations.SuiteTest" />
-            <class name="com.bmwu.testng.configurationannotations.OtherTest" />
+            <class name="com.bmwu.configurationannotations.SuiteTest" />
+            <class name="com.bmwu.configurationannotations.OtherTest" />
         </classes>
     </test>
     <!-- @AfterTest -->
@@ -26,8 +26,8 @@
 
     <test name="GroupTest">
         <classes>
-            <class name="com.bmwu.testng.groups.GroupOnClassTest" />
-            <class name="com.bmwu.testng.groups.GroupTest" />
+            <class name="com.bmwu.groups.GroupOnClassTest" />
+            <class name="com.bmwu.groups.GroupTest" />
         </classes>
     </test>
 
@@ -41,23 +41,23 @@
         </groups>
 
         <classes>
-            <class name="com.bmwu.testng.groups.GroupOnClassTest"/>
-            <class name="com.bmwu.testng.groups.GroupTest"/>
+            <class name="com.bmwu.groups.GroupOnClassTest"/>
+            <class name="com.bmwu.groups.GroupTest"/>
         </classes>
     </test>
 
     <!-- Suite Test -->
     <test name="order">
         <classes>
-            <class name="com.bmwu.testng.suite.ConfigTest" />
-            <class name="com.bmwu.testng.suite.OrderTest"/>
+            <class name="com.bmwu.suite.ConfigTest" />
+            <class name="com.bmwu.suite.OrderTest"/>
         </classes>
     </test>
 
     <test name="database">
         <classes>
-            <class name="com.bmwu.testng.suite.ConfigTest"/>
-            <class name="com.bmwu.testng.suite.DatabaseTest"/>
+            <class name="com.bmwu.suite.ConfigTest"/>
+            <class name="com.bmwu.suite.DatabaseTest"/>
         </classes>
     </test>
 
@@ -71,8 +71,8 @@
     <!--Specify methods to include or exclude-->
     <test name="order3">
         <classes>
-            <class name="com.bmwu.testng.suite.ConfigTest" />
-            <class name="com.bmwu.testng.suite.OrderTest">
+            <class name="com.bmwu.suite.ConfigTest" />
+            <class name="com.bmwu.suite.OrderTest">
                 <methods>
                     <include name="testMakeOrder" />
                     <include name="testUpdateOrder" />
@@ -94,19 +94,40 @@
         </groups>
 
         <classes>
-            <class name="com.bmwu.testng.suite.DatabaseTest"/>
+            <class name="com.bmwu.suite.DatabaseTest"/>
         </classes>
     </test>
 
 
     <test name="dependency">
         <classes>
-            <class name="com.bmwu.testng.dependency.DependsOnGroupsAppTest"/>
-            <class name="com.bmwu.testng.dependency.DependsOnGroupsDBTest"/>
-            <class name="com.bmwu.testng.dependency.DependsOnGroupsServerTest"/>
+            <class name="com.bmwu.dependency.DependsOnGroupsAppTest"/>
+            <class name="com.bmwu.dependency.DependsOnGroupsDBTest"/>
+            <class name="com.bmwu.dependency.DependsOnGroupsServerTest"/>
         </classes>
     </test>
 
+
+    <test name="parameterTest">
+        <parameter name="dbconfig" value="db.properties"/>
+        <parameter name="poolsize" value="10"/>
+
+        <classes>
+            <class name="com.bmwu.parameter.ParameterXMLTest"/>
+        </classes>
+    </test>
+
+    <test name="parameterITestContentTest">
+        <groups>
+            <run>
+                <include name="groupA"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.bmwu.parameter.ParameterDataProviderITestContentTest"/>
+        </classes>
+    </test>
 
 </suite>
 <!-- @AfterSuite -->
