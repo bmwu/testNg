@@ -1,9 +1,11 @@
+package com.bmwu.testng.configurationannotations;
+
 import org.testng.annotations.*;
 
 /**
  * Created by michael on 3/2/17.
  */
-public class configurationTest {
+public class ConfigurationTest {
 
     @BeforeGroups("exercise")
     public void beforeGroups() {
@@ -37,11 +39,11 @@ public class configurationTest {
 
     @Test(groups = "exercise")
     public void test1() {
-        System.out.println("test-Groups");
+        System.out.println("@Test - test1 Groups");
     }
 
     @Test
     public void test2() {
-        System.out.println("test");
+        System.out.println("@Test - test2");
     }
 }
