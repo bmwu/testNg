@@ -22,5 +22,28 @@
     </test>
     <!-- @AfterTest -->
 
+    <test name="GroupTest">
+        <classes>
+            <class name="com.bmwu.testng.groups.GroupOnClassTest" />
+            <class name="com.bmwu.testng.groups.GroupTest" />
+        </classes>
+    </test>
+
+    <test name="GroupOnClassTest">
+
+        <groups>
+            <run>
+                <!-- 这个是GroupTest文件里面的group name, 只会跑这个group, 所以 group:do 和依赖它的runFinal都不会被执行 -->
+                <include name="group-test"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="com.bmwu.testng.groups.GroupOnClassTest"/>
+            <class name="com.bmwu.testng.groups.GroupTest"/>
+        </classes>
+    </test>
+
+
 </suite>
 <!-- @AfterSuite -->
